@@ -155,8 +155,19 @@ function statements(trailing) {
 
 		[rn('foreach'),     $ => seq(
 			$.kFor,
-			field('iterator', $._expr), $.kIn,
+			field('iterator', choice($._expr, seq($.kVar, $.identifier))), $.kIn,
 			field('iterable', $._expr), $.kDo,
+			field('body', lastStatement($))
+		)],
+
+		[rn('using'),       $ => seq(
+			$.kUsing,
+			delimited1(choice(
+				$.assignment,
+				$.varAssignDef,
+				$._expr
+			)),
+			$.kDo,
 			field('body', lastStatement($))
 		)],
 
@@ -257,6 +268,7 @@ function statements(trailing) {
 			alias($[rn('case')],      $.case),
 			alias($[rn('block')],     $.block),
 			alias($[rn('with')],      $.with),
+			alias($[rn('using')],     $.using),
 			alias($[rn('raise')],     $.raise),
 			alias($[rn('goto')],      $.goto),
 			alias($[rn('asm')],       $.asm),
@@ -287,6 +299,20 @@ module.exports = grammar({
 		...enable_if(rtti,
 			[ $.declProcFwd ], [ $.declVars], [ $.declConsts ], [ $.declTypes]
 		),
+		[ $.exprTuple, $._initializer ],
+		[ $.tupleDeconstruction, $.type ],
+		[ $.tupleDeconstruction, $._expr ],
+		[ $.tupleDeconstruction, $.declArg ],
+		[ $._ref, $.arrowFunction, $.declArg ],
+		[ $._ref, $.arrowFunction ],
+		[ $.arrowFunction, $.declArg ],
+		[ $.declArg ],
+		[ $.declTuple, $.declArg ],
+		[ $._ref, $.declEnumValue ],
+		[ $._ref, $.arrowFunction, $._typeref, $.declEnumValue ],
+		[ $._ref, $.arrowFunction, $._typeref, $.declEnumValue, $.declArg ],
+		[ $._ref, $._typeref ],
+		[ $._typeref, $.declEnumValue ],
 		// `procedure (` could be a declaration of an anonymous procedure or
 		// the call of a function named "procedure" (which doesn't actually
 		// make sense, but for Treesitter it does), so we need another conflict
@@ -342,21 +368,30 @@ module.exports = grammar({
 		...statements(true),
 
 		assignment:      $ => op.infix(1,
-			choice($._expr, $.varAssignDef),
+			choice($._expr, $.varAssignDef, $.tupleDeconstruction),
 			choice(
 				$.kAssign,
 				...enable_if(fpc,
 					$.kAssignAdd, $.kAssignSub, $.kAssignMul, $.kAssignDiv
 				)
 			),
-			$._expr
+			choice($._expr, $.assignment)
+		),
+		tupleDeconstruction:  $ => seq(
+			optional($.kVar),
+			'(',
+			delimited1(choice(
+				seq($.kVar, field('name', $.identifier), optional(seq(':', field('type', $.typeref)))),
+				$._ref
+			)),
+			')'
 		),
 		varAssignDef:          $ => seq($.kVar, $.identifier,
 			optional(seq(
 				':',
 				field('type', $.typeref)
 			))),
-		varDef:          $ => seq($.kVar, $.identifier, ':', field('type', $.typeref)),
+		varDef:          $ => seq($.kVar, delimited1($.identifier), ':', field('type', $.typeref)),
 		label:           $ => seq($.identifier, ':'),
 		caseLabel:       $ => seq(delimited1(choice($._expr, $.range)), ':'),
 
@@ -403,11 +438,12 @@ module.exports = grammar({
 			),
 			$.identifier,
 			$._literal,  $.inherited, $.exprDot,
-			$.exprBrackets, $.exprParens, $.exprSubscript, $.exprCall,
+			$.exprBrackets, $.exprParens, $.exprTuple, $.exprSubscript, $.exprCall,
 			alias($.exprDeref, $.exprUnary),
 			alias($.exprAs, $.exprBinary),
 			...enable_if(templates, $.exprTpl),
-			...enable_if(lambda, $.lambda)
+			...enable_if(lambda, $.lambda),
+			$.arrowFunction
 		),
 
 		lambda:          $ => seq(
@@ -505,6 +541,7 @@ module.exports = grammar({
 		),
 
 		exprUnary:       $ => choice(
+			op.prefix(4,  $.kAwait, $._expr),
 			op.prefix(4,  $.kNot,  $._expr),
 			op.prefix(4,  $.kAdd,  $._expr),
 			op.prefix(4,  $.kSub,  $._expr),
@@ -512,6 +549,31 @@ module.exports = grammar({
 		),
 
 		exprParens:      $ => prec.left(5,seq('(', $._expr, ')')),
+
+		exprTuple:       $ => prec.dynamic(-1, seq(
+			'(',
+			$._expr,
+			',',
+			delimited1($._expr, ','),
+			optional(','),
+			')'
+		)),
+
+		arrowFunction:   $ => prec.right(seq(
+			choice(
+				seq(
+					field('args', seq('(', optional(delimited(choice($.declArg, $.identifier), choice(',', ';'))), ')')),
+					optional(seq(':', field('type', $.typeref)))
+				),
+				field('args', $.identifier)
+			),
+			$.kFatArrow,
+			field('body', choice(
+				$.assignment,
+				$._expr,
+				tr($, 'block')
+			))
+		)),
 
 		// Set or array literal
 		exprBrackets:       $ => seq(
@@ -531,6 +593,15 @@ module.exports = grammar({
 			$.declProcRef,
 		)),
 
+		declTuple:       $ => seq(
+			'(',
+			delimited1(choice(
+				seq(field('name', $.identifier), ':', field('type', $.type)),
+				$.type
+			)),
+			')'
+		),
+
 		typeref:         $ => seq(
 			...enable_if(fpc, field('_dummy', optional($.kSpecialize))),
 			$._typeref,
@@ -541,6 +612,7 @@ module.exports = grammar({
 			$.identifier, $.typerefDot,
 			...enable_if(templates, $.typerefTpl),
 			$.typerefPtr,
+			$.declTuple,
 		),
 
 		typerefDot:      $ => op.infix(1,$._typeref, $.kDot, $._typeref),
@@ -577,11 +649,50 @@ module.exports = grammar({
 
 		_literal:        $ => choice(
 			$.literalString,
+			$.interpolatedString,
 			$.literalNumber,
 			$.kNil, $.kTrue, $.kFalse
 		),
 		literalString:   $ => repeat1($._literalString),
-		_literalString:  $ => choice(/'[^']*'/, $.literalChar),
+		_literalString:  $ => choice(/'[^']*'/, /`[^`]*`/, $.literalChar),
+		interpolatedString: $ => choice(
+			seq(
+				"$'",
+				repeat(choice(
+					token.immediate(/[^'{]+/),
+					$.interpolation,
+					$.escapeSequence
+				)),
+				"'"
+			),
+			seq(
+				"$`",
+				repeat(choice(
+					token.immediate(/[^`{]+/),
+					$.interpolation,
+					$.escapeSequence
+				)),
+				"`"
+			)
+		),
+		escapeSequence:  $ => choice(
+			token.immediate(prec(2, "{{")),
+			token.immediate(prec(2, "}}")),
+			token.immediate("''"),
+			token.immediate("``")
+		),
+		interpOpen:      $ => token.immediate(prec(1, '{')),
+		interpClose:     $ => '}',
+		interpolation:   $ => seq(
+			$.interpOpen,
+			field('expression', $._expr),
+			optional(seq(
+				':',
+				field('width', $._expr),
+				optional(seq(':', field('precision', $._expr)))
+			)),
+			$.interpClose
+		),
 		literalChar:     $ => seq('#', $._literalInt),
 		literalNumber:   $ => choice($._literalInt, $._literalFloat),
 		_literalInt:     $ => choice(
@@ -787,7 +898,14 @@ module.exports = grammar({
 			optional($._classDeclarations),
 			repeat($.declSection),
 			optional($.declVariant),
-			$.kEnd
+			$.kEnd,
+			repeat(choice(
+				$.kNocopy,
+				$.kDeprecated,
+				$.kPlatform,
+				$.kExperimental,
+				seq($.kAlign, $._expr)
+			))
 		),
 
 		declSection:     $ => seq(
@@ -883,8 +1001,7 @@ module.exports = grammar({
 			field('name', $._operatorName),
 			field('args', optional($.declArgs)),
 			...enable_if(fpc, field('resultName', optional($.identifier))),
-			':',
-			field('type', $.type),
+			optional(seq(':', field('type', $.type))),
 			field('assign', optional($.defaultValue)),
 			';',
 			repeat($._procAttributeNoExt)
@@ -944,6 +1061,7 @@ module.exports = grammar({
 		)/*)*/,
 
 		procAttribute:   $ => choice(
+			$.kAsync,
 			$.kStatic, $.kVirtual, $.kDynamic, $.kAbstract, $.kOverride,
 			$.kOverload, $.kReintroduce, $.kInline, $.kStdcall,
 			$.kCdecl, $.kPascal, $.kRegister, $.kSafecall, $.kAssembler,
@@ -994,9 +1112,11 @@ module.exports = grammar({
 
 		// INITIALIZERS --------------------------------------------------------
 
-		_initializer:    $ => prec(2,seq(
-			choice($._expr, $.recInitializer, $.arrInitializer)
-		)),
+		_initializer:    $ => choice(
+			$.recInitializer,
+			prec(10, $.arrInitializer),
+			$._expr
+		),
 
 		// record initializer
 		recInitializer:  $ => seq(
@@ -1011,7 +1131,7 @@ module.exports = grammar({
 		),
 
 		// array initializer
-		arrInitializer:  $ => prec(1,seq('(', delimited1($._initializer), ')')),
+		arrInitializer:  $ => prec(7,seq('(', delimited1($._initializer), ')')),
 
 		// TERMINAL SYMBOLS ----------------------------------------------------
 
@@ -1193,13 +1313,21 @@ module.exports = grammar({
 		kIfndef:           $ => /ifndef/i,
 		kEndif:            $ => /endif/i,
 
+		kAsync:            $ => /async/i,
+		kAwait:            $ => /await/i,
+		kUsing:            $ => /using/i,
+		kNocopy:           $ => /nocopy/i,
+		kAlign:            $ => /align/i,
+		kFatArrow:         $ => '=>',
+
 		identifier:        $ => /[&]?[a-zA-Z_]+[0-9_a-zA-Z]*/,
 
 	  	_space:            $ => /[\s\r\n\t]+/,
 		pp:                $ => /\{\$[^}]*\}/,
 		comment:           $ => token(choice(
 			seq('//', /.*/),
-			seq('{', /([^$}][^}]*)?/, '}'),
+			/\{([^$}]|\$[^{}])([^}]*\{[^}]*\})*[^}]*\}/,
+			seq('{', '}'),
 			/[(][*]([^*]*[*]+[^)*])*[^*]*[*]+[)]/
 		)),
 	}

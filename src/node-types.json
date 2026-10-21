@@ -12,6 +12,10 @@
           "named": true
         },
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -40,6 +44,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -49,6 +57,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -81,6 +93,156 @@
         },
         {
           "type": "recInitializer",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "arrowFunction",
+    "named": true,
+    "fields": {
+      "args": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "declArg",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "exprBinary",
+            "named": true
+          },
+          {
+            "type": "exprBrackets",
+            "named": true
+          },
+          {
+            "type": "exprCall",
+            "named": true
+          },
+          {
+            "type": "exprDot",
+            "named": true
+          },
+          {
+            "type": "exprParens",
+            "named": true
+          },
+          {
+            "type": "exprSubscript",
+            "named": true
+          },
+          {
+            "type": "exprTpl",
+            "named": true
+          },
+          {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
+            "type": "exprUnary",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
+            "named": true
+          },
+          {
+            "type": "kFalse",
+            "named": true
+          },
+          {
+            "type": "kNil",
+            "named": true
+          },
+          {
+            "type": "kSpecialize",
+            "named": true
+          },
+          {
+            "type": "kTrue",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "literalNumber",
+            "named": true
+          },
+          {
+            "type": "literalString",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "typeref",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "kFatArrow",
           "named": true
         }
       ]
@@ -133,6 +295,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -161,6 +327,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -170,6 +340,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -198,6 +372,10 @@
           },
           {
             "type": "literalString",
+            "named": true
+          },
+          {
+            "type": "tupleDeconstruction",
             "named": true
           },
           {
@@ -237,6 +415,14 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -265,6 +451,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -274,6 +464,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -381,6 +575,10 @@
           "named": true
         },
         {
+          "type": "using",
+          "named": true
+        },
+        {
           "type": "varDef",
           "named": true
         },
@@ -468,6 +666,10 @@
           "named": true
         },
         {
+          "type": "using",
+          "named": true
+        },
+        {
           "type": "varDef",
           "named": true
         },
@@ -490,6 +692,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "arrowFunction",
+          "named": true
+        },
         {
           "type": "asm",
           "named": true
@@ -539,6 +745,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -568,6 +778,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -632,6 +846,10 @@
         },
         {
           "type": "try",
+          "named": true
+        },
+        {
+          "type": "using",
           "named": true
         },
         {
@@ -714,6 +932,10 @@
             "named": true
           },
           {
+            "type": "using",
+            "named": true
+          },
+          {
             "type": "varDef",
             "named": true
           },
@@ -748,6 +970,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -776,6 +1002,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -785,6 +1015,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -908,6 +1142,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -936,6 +1174,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -945,6 +1187,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -1030,6 +1276,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "declConsts",
           "named": true
         },
@@ -1090,6 +1340,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -1102,7 +1356,15 @@
           "named": true
         },
         {
+          "type": "interpolatedString",
+          "named": true
+        },
+        {
           "type": "kAbstract",
+          "named": true
+        },
+        {
+          "type": "kAlign",
           "named": true
         },
         {
@@ -1110,7 +1372,15 @@
           "named": true
         },
         {
+          "type": "kDeprecated",
+          "named": true
+        },
+        {
           "type": "kEnd",
+          "named": true
+        },
+        {
+          "type": "kExperimental",
           "named": true
         },
         {
@@ -1127,6 +1397,10 @@
         },
         {
           "type": "kNil",
+          "named": true
+        },
+        {
+          "type": "kNocopy",
           "named": true
         },
         {
@@ -1147,6 +1421,10 @@
         },
         {
           "type": "kPacked",
+          "named": true
+        },
+        {
+          "type": "kPlatform",
           "named": true
         },
         {
@@ -1317,6 +1595,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -1345,6 +1627,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -1362,6 +1648,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -1527,6 +1817,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "declConsts",
           "named": true
         },
@@ -1559,11 +1853,75 @@
           "named": true
         },
         {
+          "type": "exprBinary",
+          "named": true
+        },
+        {
+          "type": "exprBrackets",
+          "named": true
+        },
+        {
+          "type": "exprCall",
+          "named": true
+        },
+        {
+          "type": "exprDot",
+          "named": true
+        },
+        {
+          "type": "exprParens",
+          "named": true
+        },
+        {
+          "type": "exprSubscript",
+          "named": true
+        },
+        {
+          "type": "exprTpl",
+          "named": true
+        },
+        {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
+          "type": "exprUnary",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
+          "named": true
+        },
+        {
+          "type": "kAlign",
+          "named": true
+        },
+        {
           "type": "kClass",
           "named": true
         },
         {
+          "type": "kDeprecated",
+          "named": true
+        },
+        {
           "type": "kEnd",
+          "named": true
+        },
+        {
+          "type": "kExperimental",
+          "named": true
+        },
+        {
+          "type": "kFalse",
           "named": true
         },
         {
@@ -1575,11 +1933,43 @@
           "named": true
         },
         {
+          "type": "kNil",
+          "named": true
+        },
+        {
+          "type": "kNocopy",
+          "named": true
+        },
+        {
+          "type": "kPlatform",
+          "named": true
+        },
+        {
           "type": "kRecord",
           "named": true
         },
         {
+          "type": "kSpecialize",
+          "named": true
+        },
+        {
+          "type": "kTrue",
+          "named": true
+        },
+        {
           "type": "kType",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "literalNumber",
+          "named": true
+        },
+        {
+          "type": "literalString",
           "named": true
         },
         {
@@ -1631,6 +2021,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "declConsts",
           "named": true
         },
@@ -1663,6 +2057,62 @@
           "named": true
         },
         {
+          "type": "exprBinary",
+          "named": true
+        },
+        {
+          "type": "exprBrackets",
+          "named": true
+        },
+        {
+          "type": "exprCall",
+          "named": true
+        },
+        {
+          "type": "exprDot",
+          "named": true
+        },
+        {
+          "type": "exprParens",
+          "named": true
+        },
+        {
+          "type": "exprSubscript",
+          "named": true
+        },
+        {
+          "type": "exprTpl",
+          "named": true
+        },
+        {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
+          "type": "exprUnary",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
+          "named": true
+        },
+        {
+          "type": "kAlign",
+          "named": true
+        },
+        {
+          "type": "kDeprecated",
+          "named": true
+        },
+        {
           "type": "kDispInterface",
           "named": true
         },
@@ -1671,11 +2121,51 @@
           "named": true
         },
         {
+          "type": "kExperimental",
+          "named": true
+        },
+        {
+          "type": "kFalse",
+          "named": true
+        },
+        {
           "type": "kInterface",
           "named": true
         },
         {
+          "type": "kNil",
+          "named": true
+        },
+        {
+          "type": "kNocopy",
+          "named": true
+        },
+        {
           "type": "kPacked",
+          "named": true
+        },
+        {
+          "type": "kPlatform",
+          "named": true
+        },
+        {
+          "type": "kSpecialize",
+          "named": true
+        },
+        {
+          "type": "kTrue",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "literalNumber",
+          "named": true
+        },
+        {
+          "type": "literalString",
           "named": true
         }
       ]
@@ -1960,6 +2450,10 @@
         "required": false,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -1988,6 +2482,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -1997,6 +2495,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -2034,6 +2536,10 @@
         "required": false,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -2062,6 +2568,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -2071,6 +2581,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -2122,6 +2636,10 @@
             "named": false
           },
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -2150,6 +2668,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -2159,6 +2681,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -2196,6 +2722,10 @@
         "required": false,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -2224,6 +2754,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -2233,6 +2767,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -2290,6 +2828,10 @@
         "required": false,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -2318,6 +2860,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -2327,6 +2873,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -2531,6 +3081,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -2559,6 +3113,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -2568,6 +3126,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -2600,6 +3162,42 @@
         },
         {
           "type": "literalString",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "declTuple",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "type",
           "named": true
         }
       ]
@@ -2783,6 +3381,10 @@
       "required": false,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -2811,6 +3413,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -2820,6 +3426,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -3058,6 +3668,10 @@
           "named": true
         },
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -3086,6 +3700,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -3095,6 +3713,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -3135,6 +3757,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "escapeSequence",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "exceptionElse",
@@ -3198,6 +3825,10 @@
         },
         {
           "type": "try",
+          "named": true
+        },
+        {
+          "type": "using",
           "named": true
         },
         {
@@ -3280,6 +3911,10 @@
             "named": true
           },
           {
+            "type": "using",
+            "named": true
+          },
+          {
             "type": "varDef",
             "named": true
           },
@@ -3342,6 +3977,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -3370,6 +4009,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -3379,6 +4022,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -3425,6 +4072,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -3453,6 +4104,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -3462,6 +4117,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -3585,6 +4244,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -3613,6 +4276,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -3622,6 +4289,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -3665,6 +4336,10 @@
       "required": false,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -3693,6 +4368,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -3702,6 +4381,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -3758,6 +4441,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -3786,6 +4473,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -3795,6 +4486,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -3838,6 +4533,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -3866,6 +4565,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -3875,6 +4578,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -3922,6 +4629,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -3950,6 +4661,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -3959,6 +4674,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -4002,6 +4721,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -4030,6 +4753,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -4039,6 +4766,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -4091,6 +4822,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -4119,6 +4854,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -4128,6 +4867,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -4175,6 +4918,10 @@
             "named": false
           },
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -4203,6 +4950,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -4212,6 +4963,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -4249,6 +5004,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -4277,6 +5036,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -4286,6 +5049,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -4335,6 +5102,97 @@
     }
   },
   {
+    "type": "exprTuple",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
+          "type": "exprBinary",
+          "named": true
+        },
+        {
+          "type": "exprBrackets",
+          "named": true
+        },
+        {
+          "type": "exprCall",
+          "named": true
+        },
+        {
+          "type": "exprDot",
+          "named": true
+        },
+        {
+          "type": "exprParens",
+          "named": true
+        },
+        {
+          "type": "exprSubscript",
+          "named": true
+        },
+        {
+          "type": "exprTpl",
+          "named": true
+        },
+        {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
+          "type": "exprUnary",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
+          "named": true
+        },
+        {
+          "type": "kFalse",
+          "named": true
+        },
+        {
+          "type": "kNil",
+          "named": true
+        },
+        {
+          "type": "kSpecialize",
+          "named": true
+        },
+        {
+          "type": "kTrue",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "literalNumber",
+          "named": true
+        },
+        {
+          "type": "literalString",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "exprUnary",
     "named": true,
     "fields": {
@@ -4342,6 +5200,10 @@
         "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "arrowFunction",
+            "named": true
+          },
           {
             "type": "exprBinary",
             "named": true
@@ -4371,6 +5233,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -4380,6 +5246,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -4422,6 +5292,10 @@
           },
           {
             "type": "kAt",
+            "named": true
+          },
+          {
+            "type": "kAwait",
             "named": true
           },
           {
@@ -4509,6 +5383,10 @@
           "named": true
         },
         {
+          "type": "using",
+          "named": true
+        },
+        {
           "type": "varDef",
           "named": true
         },
@@ -4588,6 +5466,10 @@
             "named": true
           },
           {
+            "type": "using",
+            "named": true
+          },
+          {
             "type": "varDef",
             "named": true
           },
@@ -4605,6 +5487,10 @@
         "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "arrowFunction",
+            "named": true
+          },
           {
             "type": "exprBinary",
             "named": true
@@ -4634,6 +5520,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -4643,6 +5533,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -4774,6 +5668,10 @@
             "named": true
           },
           {
+            "type": "using",
+            "named": true
+          },
+          {
             "type": "varDef",
             "named": true
           },
@@ -4791,6 +5689,10 @@
         "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "arrowFunction",
+            "named": true
+          },
           {
             "type": "exprBinary",
             "named": true
@@ -4820,6 +5722,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -4829,6 +5735,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -4866,6 +5776,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -4894,6 +5808,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -4903,6 +5821,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -4919,6 +5841,10 @@
           },
           {
             "type": "kTrue",
+            "named": true
+          },
+          {
+            "type": "kVar",
             "named": true
           },
           {
@@ -5146,6 +6072,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -5174,6 +6104,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -5183,6 +6117,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -5225,6 +6163,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -5253,6 +6195,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -5262,6 +6208,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -5355,6 +6305,10 @@
             "named": true
           },
           {
+            "type": "using",
+            "named": true
+          },
+          {
             "type": "varDef",
             "named": true
           },
@@ -5393,6 +6347,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -5421,6 +6379,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -5430,6 +6392,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -5523,6 +6489,10 @@
             "named": true
           },
           {
+            "type": "using",
+            "named": true
+          },
+          {
             "type": "varDef",
             "named": true
           },
@@ -5590,6 +6560,10 @@
           },
           {
             "type": "try",
+            "named": true
+          },
+          {
+            "type": "using",
             "named": true
           },
           {
@@ -5765,6 +6739,10 @@
           "named": true
         },
         {
+          "type": "using",
+          "named": true
+        },
+        {
           "type": "varDef",
           "named": true
         },
@@ -5821,6 +6799,303 @@
         },
         {
           "type": "kInterface",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "interpolatedString",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escapeSequence",
+          "named": true
+        },
+        {
+          "type": "interpolation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "interpolation",
+    "named": true,
+    "fields": {
+      "expression": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
+            "type": "exprBinary",
+            "named": true
+          },
+          {
+            "type": "exprBrackets",
+            "named": true
+          },
+          {
+            "type": "exprCall",
+            "named": true
+          },
+          {
+            "type": "exprDot",
+            "named": true
+          },
+          {
+            "type": "exprParens",
+            "named": true
+          },
+          {
+            "type": "exprSubscript",
+            "named": true
+          },
+          {
+            "type": "exprTpl",
+            "named": true
+          },
+          {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
+            "type": "exprUnary",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
+            "named": true
+          },
+          {
+            "type": "kFalse",
+            "named": true
+          },
+          {
+            "type": "kNil",
+            "named": true
+          },
+          {
+            "type": "kSpecialize",
+            "named": true
+          },
+          {
+            "type": "kTrue",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "literalNumber",
+            "named": true
+          },
+          {
+            "type": "literalString",
+            "named": true
+          }
+        ]
+      },
+      "precision": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
+            "type": "exprBinary",
+            "named": true
+          },
+          {
+            "type": "exprBrackets",
+            "named": true
+          },
+          {
+            "type": "exprCall",
+            "named": true
+          },
+          {
+            "type": "exprDot",
+            "named": true
+          },
+          {
+            "type": "exprParens",
+            "named": true
+          },
+          {
+            "type": "exprSubscript",
+            "named": true
+          },
+          {
+            "type": "exprTpl",
+            "named": true
+          },
+          {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
+            "type": "exprUnary",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
+            "named": true
+          },
+          {
+            "type": "kFalse",
+            "named": true
+          },
+          {
+            "type": "kNil",
+            "named": true
+          },
+          {
+            "type": "kSpecialize",
+            "named": true
+          },
+          {
+            "type": "kTrue",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "literalNumber",
+            "named": true
+          },
+          {
+            "type": "literalString",
+            "named": true
+          }
+        ]
+      },
+      "width": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
+            "type": "exprBinary",
+            "named": true
+          },
+          {
+            "type": "exprBrackets",
+            "named": true
+          },
+          {
+            "type": "exprCall",
+            "named": true
+          },
+          {
+            "type": "exprDot",
+            "named": true
+          },
+          {
+            "type": "exprParens",
+            "named": true
+          },
+          {
+            "type": "exprSubscript",
+            "named": true
+          },
+          {
+            "type": "exprTpl",
+            "named": true
+          },
+          {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
+            "type": "exprUnary",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
+            "named": true
+          },
+          {
+            "type": "kFalse",
+            "named": true
+          },
+          {
+            "type": "kNil",
+            "named": true
+          },
+          {
+            "type": "kSpecialize",
+            "named": true
+          },
+          {
+            "type": "kTrue",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "literalNumber",
+            "named": true
+          },
+          {
+            "type": "literalString",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "interpClose",
+          "named": true
+        },
+        {
+          "type": "interpOpen",
           "named": true
         }
       ]
@@ -5956,6 +7231,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -5984,6 +7263,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -5993,6 +7276,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -6241,6 +7528,10 @@
         "required": false,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -6269,6 +7560,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -6278,6 +7573,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -6320,6 +7619,10 @@
       "required": false,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -6348,6 +7651,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -6360,6 +7667,10 @@
           "named": true
         },
         {
+          "type": "interpolatedString",
+          "named": true
+        },
+        {
           "type": "kAbstract",
           "named": true
         },
@@ -6369,6 +7680,10 @@
         },
         {
           "type": "kAssembler",
+          "named": true
+        },
+        {
+          "type": "kAsync",
           "named": true
         },
         {
@@ -6579,6 +7894,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -6607,6 +7926,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -6616,6 +7939,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -6737,6 +8064,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -6765,6 +8096,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -6774,6 +8109,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -6827,6 +8166,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -6855,6 +8198,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -6864,6 +8211,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -6935,6 +8286,10 @@
             "named": true
           },
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -6963,6 +8318,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -6972,6 +8331,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -7029,6 +8392,10 @@
         "required": true,
         "types": [
           {
+            "type": "arrowFunction",
+            "named": true
+          },
+          {
             "type": "exprBinary",
             "named": true
           },
@@ -7057,6 +8424,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -7066,6 +8437,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -7183,6 +8558,10 @@
       "required": false,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -7211,6 +8590,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -7220,6 +8603,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -7262,6 +8649,10 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -7290,6 +8681,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -7299,6 +8694,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -7397,6 +8796,10 @@
           "named": true
         },
         {
+          "type": "using",
+          "named": true
+        },
+        {
           "type": "varDef",
           "named": true
         },
@@ -7478,6 +8881,122 @@
     }
   },
   {
+    "type": "tupleDeconstruction",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "typeref",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
+          "type": "exprBinary",
+          "named": true
+        },
+        {
+          "type": "exprBrackets",
+          "named": true
+        },
+        {
+          "type": "exprCall",
+          "named": true
+        },
+        {
+          "type": "exprDot",
+          "named": true
+        },
+        {
+          "type": "exprParens",
+          "named": true
+        },
+        {
+          "type": "exprSubscript",
+          "named": true
+        },
+        {
+          "type": "exprTpl",
+          "named": true
+        },
+        {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
+          "type": "exprUnary",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
+          "named": true
+        },
+        {
+          "type": "kFalse",
+          "named": true
+        },
+        {
+          "type": "kNil",
+          "named": true
+        },
+        {
+          "type": "kSpecialize",
+          "named": true
+        },
+        {
+          "type": "kTrue",
+          "named": true
+        },
+        {
+          "type": "kVar",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "literalNumber",
+          "named": true
+        },
+        {
+          "type": "literalString",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "type",
     "named": true,
     "fields": {},
@@ -7544,6 +9063,14 @@
       "required": true,
       "types": [
         {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
+          "type": "declTuple",
+          "named": true
+        },
+        {
           "type": "exprBinary",
           "named": true
         },
@@ -7572,6 +9099,10 @@
           "named": true
         },
         {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
           "type": "exprUnary",
           "named": true
         },
@@ -7581,6 +9112,10 @@
         },
         {
           "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
           "named": true
         },
         {
@@ -7639,6 +9174,10 @@
       "required": true,
       "types": [
         {
+          "type": "declTuple",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -7665,6 +9204,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "declTuple",
+            "named": true
+          },
           {
             "type": "identifier",
             "named": true
@@ -7698,6 +9241,10 @@
         "required": true,
         "types": [
           {
+            "type": "declTuple",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -7725,6 +9272,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "declTuple",
+            "named": true
+          },
           {
             "type": "identifier",
             "named": true
@@ -7773,6 +9324,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "declTuple",
+            "named": true
+          },
           {
             "type": "identifier",
             "named": true
@@ -7845,6 +9400,192 @@
         },
         {
           "type": "moduleName",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "using",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "asm",
+            "named": true
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "case",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "foreach",
+            "named": true
+          },
+          {
+            "type": "goto",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "ifElse",
+            "named": true
+          },
+          {
+            "type": "raise",
+            "named": true
+          },
+          {
+            "type": "repeat",
+            "named": true
+          },
+          {
+            "type": "statement",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "using",
+            "named": true
+          },
+          {
+            "type": "varDef",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          },
+          {
+            "type": "with",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arrowFunction",
+          "named": true
+        },
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "exprBinary",
+          "named": true
+        },
+        {
+          "type": "exprBrackets",
+          "named": true
+        },
+        {
+          "type": "exprCall",
+          "named": true
+        },
+        {
+          "type": "exprDot",
+          "named": true
+        },
+        {
+          "type": "exprParens",
+          "named": true
+        },
+        {
+          "type": "exprSubscript",
+          "named": true
+        },
+        {
+          "type": "exprTpl",
+          "named": true
+        },
+        {
+          "type": "exprTuple",
+          "named": true
+        },
+        {
+          "type": "exprUnary",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "inherited",
+          "named": true
+        },
+        {
+          "type": "interpolatedString",
+          "named": true
+        },
+        {
+          "type": "kDo",
+          "named": true
+        },
+        {
+          "type": "kFalse",
+          "named": true
+        },
+        {
+          "type": "kNil",
+          "named": true
+        },
+        {
+          "type": "kSpecialize",
+          "named": true
+        },
+        {
+          "type": "kTrue",
+          "named": true
+        },
+        {
+          "type": "kUsing",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "literalNumber",
+          "named": true
+        },
+        {
+          "type": "literalString",
+          "named": true
+        },
+        {
+          "type": "varAssignDef",
           "named": true
         }
       ]
@@ -7975,6 +9716,10 @@
             "named": true
           },
           {
+            "type": "using",
+            "named": true
+          },
+          {
             "type": "varDef",
             "named": true
           },
@@ -7992,6 +9737,10 @@
         "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "arrowFunction",
+            "named": true
+          },
           {
             "type": "exprBinary",
             "named": true
@@ -8021,6 +9770,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -8030,6 +9783,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -8143,6 +9900,10 @@
             "named": true
           },
           {
+            "type": "using",
+            "named": true
+          },
+          {
             "type": "varDef",
             "named": true
           },
@@ -8160,6 +9921,10 @@
         "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "arrowFunction",
+            "named": true
+          },
           {
             "type": "exprBinary",
             "named": true
@@ -8189,6 +9954,10 @@
             "named": true
           },
           {
+            "type": "exprTuple",
+            "named": true
+          },
+          {
             "type": "exprUnary",
             "named": true
           },
@@ -8198,6 +9967,10 @@
           },
           {
             "type": "inherited",
+            "named": true
+          },
+          {
+            "type": "interpolatedString",
             "named": true
           },
           {
@@ -8251,6 +10024,22 @@
     "named": false
   },
   {
+    "type": "$'",
+    "named": false
+  },
+  {
+    "type": "$`",
+    "named": false
+  },
+  {
+    "type": "'",
+    "named": false
+  },
+  {
+    "type": "''",
+    "named": false
+  },
+  {
     "type": "(",
     "named": false
   },
@@ -8287,11 +10076,27 @@
     "named": false
   },
   {
+    "type": "`",
+    "named": false
+  },
+  {
+    "type": "``",
+    "named": false
+  },
+  {
     "type": "comment",
     "named": true
   },
   {
     "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "interpClose",
+    "named": true
+  },
+  {
+    "type": "interpOpen",
     "named": true
   },
   {
@@ -8308,6 +10113,10 @@
   },
   {
     "type": "kAlias",
+    "named": true
+  },
+  {
+    "type": "kAlign",
     "named": true
   },
   {
@@ -8351,7 +10160,15 @@
     "named": true
   },
   {
+    "type": "kAsync",
+    "named": true
+  },
+  {
     "type": "kAt",
+    "named": true
+  },
+  {
+    "type": "kAwait",
     "named": true
   },
   {
@@ -8468,6 +10285,10 @@
   },
   {
     "type": "kFar",
+    "named": true
+  },
+  {
+    "type": "kFatArrow",
     "named": true
   },
   {
@@ -8632,6 +10453,10 @@
   },
   {
     "type": "kNil",
+    "named": true
+  },
+  {
+    "type": "kNocopy",
     "named": true
   },
   {
@@ -8879,6 +10704,10 @@
     "named": true
   },
   {
+    "type": "kUsing",
+    "named": true
+  },
+  {
     "type": "kVar",
     "named": true
   },
@@ -8917,5 +10746,13 @@
   {
     "type": "pp",
     "named": true
+  },
+  {
+    "type": "{{",
+    "named": false
+  },
+  {
+    "type": "}}",
+    "named": false
   }
 ]

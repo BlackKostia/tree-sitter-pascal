@@ -7,27 +7,28 @@ begin
   var b : integer := 20;
 end;
 ---
+
 (root
-(defProc
-  (declProc
-  (kProcedure)
-  (identifier))
-  (block
-  (kBegin)
-    (varDef
-     (kVar)
-     (identifier)
-     (typeref
-      (identifier)))
-    (assignment
-      (varAssignDef
-      (kVar)
-      (identifier)
-      (typeref
-        (identifier)))
-      (kAssign)
-      (literalNumber))
-  (kEnd))))
+  (defProc
+    (declProc
+      (kProcedure)
+      (identifier))
+    (block
+      (kBegin)
+      (varDef
+        (kVar)
+        (identifier)
+        (typeref
+          (identifier)))
+      (assignment
+        (varAssignDef
+          (kVar)
+          (identifier)
+          (typeref
+            (identifier)))
+        (kAssign)
+        (literalNumber))
+      (kEnd))))
 
 ===
 Inline Auto Variables
@@ -37,20 +38,22 @@ begin
   var a := 10;
 end;
 ---
+
 (root
- (defProc
-  (declProc
-   (kProcedure)
-   (identifier))
-  (block
-   (kBegin)
-   (assignment
-    (varAssignDef
-     (kVar)
-     (identifier))
-    (kAssign)
-    (literalNumber))
-   (kEnd))))
+  (defProc
+    (declProc
+      (kProcedure)
+      (identifier))
+    (block
+      (kBegin)
+      (assignment
+        (varAssignDef
+          (kVar)
+          (identifier))
+        (kAssign)
+        (literalNumber))
+      (kEnd))))
+
 ===
 Inline For loop Variables
 ===
@@ -64,44 +67,46 @@ begin
   end;
 end;
 ---
+
 (root
-(defProc
-  (declProc
-    (kProcedure)
-    (identifier))
-  (block
-    (kBegin)
-    (for
-      (kFor)
-      (assignment
-        (varAssignDef
-          (kVar)
-          (identifier))
-        (kAssign)
-        (literalNumber))
-      (kTo)
-      (literalNumber)
-      (kDo)
-      (block
-        (kBegin)
-        (kEnd)))
-    (for
-      (kFor)
-      (assignment
-        (varAssignDef
-          (kVar)
-          (identifier)
-          (typeref
-            (identifier)))
-        (kAssign)
-        (literalNumber))
-      (kTo)
-      (literalNumber)
-      (kDo)
-      (block
-        (kBegin)
-        (kEnd)))
-    (kEnd))))
+  (defProc
+    (declProc
+      (kProcedure)
+      (identifier))
+    (block
+      (kBegin)
+      (for
+        (kFor)
+        (assignment
+          (varAssignDef
+            (kVar)
+            (identifier))
+          (kAssign)
+          (literalNumber))
+        (kTo)
+        (literalNumber)
+        (kDo)
+        (block
+          (kBegin)
+          (kEnd)))
+      (for
+        (kFor)
+        (assignment
+          (varAssignDef
+            (kVar)
+            (identifier)
+            (typeref
+              (identifier)))
+          (kAssign)
+          (literalNumber))
+        (kTo)
+        (literalNumber)
+        (kDo)
+        (block
+          (kBegin)
+          (kEnd)))
+      (kEnd))))
+
 ===
 Inline Variables and Anonymous function
 ===
@@ -112,21 +117,22 @@ begin
     end;
 end;
 ---
+
 (root
- (defProc
-  (declProc
-   (kProcedure)
-   (identifier))
-  (block
-   (kBegin)
-   (assignment
-    (varAssignDef
-     (kVar)
-     (identifier))
-    (kAssign)
-    (lambda
-     (kProcedure)
-     (block
+  (defProc
+    (declProc
+      (kProcedure)
+      (identifier))
+    (block
       (kBegin)
+      (assignment
+        (varAssignDef
+          (kVar)
+          (identifier))
+        (kAssign)
+        (lambda
+          (kProcedure)
+          (block
+            (kBegin)
+            (kEnd))))
       (kEnd))))
-   (kEnd))))

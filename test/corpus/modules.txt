@@ -9,12 +9,14 @@ end.
 ---
 
 (root
-  (program (kProgram) (moduleName (identifier))
+  (program
+    (kProgram)
+    (moduleName
+      (identifier))
     (block
       (kBegin)
       (kEnd))
     (kEndDot)))
-
 
 ===
 Program 2 - Variables
@@ -29,14 +31,21 @@ end.
 ---
 
 (root
-  (program (kProgram) (moduleName (identifier))
-    (declVars (kVar)
-      (declVar (identifier) (type (typeref (identifier)))))
+  (program
+    (kProgram)
+    (moduleName
+      (identifier))
+    (declVars
+      (kVar)
+      (declVar
+        (identifier)
+        (type
+          (typeref
+            (identifier)))))
     (block
       (kBegin)
       (kEnd))
     (kEndDot)))
-
 
 ===
 Program 3 - Subroutines
@@ -82,7 +91,6 @@ end.
       (kEnd))
     (kEndDot)))
 
-
 ===
 Library 1 - Empty
 ===
@@ -93,7 +101,10 @@ end.
 ---
 
 (root
-  (library (kLibrary) (moduleName (identifier))
+  (library
+    (kLibrary)
+    (moduleName
+      (identifier))
     (kEnd)
     (kEndDot)))
 
@@ -108,12 +119,14 @@ end.
 ---
 
 (root
-  (library (kLibrary) (moduleName (identifier))
+  (library
+    (kLibrary)
+    (moduleName
+      (identifier))
     (block
       (kBegin)
       (kEnd))
     (kEndDot)))
-
 
 ===
 Unit 1 - Empty
@@ -127,9 +140,14 @@ end.
 ---
 
 (root
-  (unit (kUnit) (moduleName (identifier))
-    (interface (kInterface))
-    (implementation (kImplementation))
+  (unit
+    (kUnit)
+    (moduleName
+      (identifier))
+    (interface
+      (kInterface))
+    (implementation
+      (kImplementation))
     (kEnd)
     (kEndDot)))
 
@@ -147,11 +165,18 @@ end.
 ---
 
 (root
-  (unit (kUnit) (moduleName (identifier))
-    (interface (kInterface))
-    (implementation (kImplementation))
-    (initialization (kInitialization))
-    (finalization (kFinalization))
+  (unit
+    (kUnit)
+    (moduleName
+      (identifier))
+    (interface
+      (kInterface))
+    (implementation
+      (kImplementation))
+    (initialization
+      (kInitialization))
+    (finalization
+      (kFinalization))
     (kEnd)
     (kEndDot)))
 
@@ -188,31 +213,53 @@ end.
 ---
 
 (root
-  (unit (kUnit) (moduleName (identifier))
-    (interface (kInterface)
-      (declProc (kProcedure) (identifier))
-      (declProc (kFunction) (identifier) (typeref (identifier))))
-    (implementation (kImplementation)
-      (declProc (kProcedure) (identifier) (kForward))
+  (unit
+    (kUnit)
+    (moduleName
+      (identifier))
+    (interface
+      (kInterface)
+      (declProc
+        (kProcedure)
+        (identifier))
+      (declProc
+        (kFunction)
+        (identifier)
+        (typeref
+          (identifier))))
+    (implementation
+      (kImplementation)
+      (declProc
+        (kProcedure)
+        (identifier)
+        (kForward))
       (defProc
-        (declProc (kProcedure) (identifier))
+        (declProc
+          (kProcedure)
+          (identifier))
         (block
           (kBegin)
-          (statement (identifier))
+          (statement
+            (identifier))
           (kEnd)))
       (defProc
-        (declProc (kFunction) (identifier) (typeref (identifier)))
+        (declProc
+          (kFunction)
+          (identifier)
+          (typeref
+            (identifier)))
         (block
           (kBegin)
           (kEnd)))
       (defProc
-        (declProc (kProcedure) (identifier))
+        (declProc
+          (kProcedure)
+          (identifier))
         (block
           (kBegin)
           (kEnd))))
     (kEnd)
     (kEndDot)))
-
 
 ===
 Unit 4 - Namespaces
@@ -235,15 +282,18 @@ end.
 ---
 
 (root
-  (unit (kUnit)
+  (unit
+    (kUnit)
     (moduleName
       (identifier)
       (kDot)
       (identifier)
       (kDot)
       (identifier))
-    (interface (kInterface)
-      (declUses (kUses)
+    (interface
+      (kInterface)
+      (declUses
+        (kUses)
         (moduleName
           (identifier)
           (kDot)
@@ -254,8 +304,10 @@ end.
           (identifier))
         (moduleName
           (identifier))))
-    (implementation (kImplementation)
-      (declUses (kUses)
+    (implementation
+      (kImplementation)
+      (declUses
+        (kUses)
         (moduleName
           (identifier))
         (moduleName
@@ -264,7 +316,6 @@ end.
           (identifier))))
     (kEnd)
     (kEndDot)))
-
 
 ===
 Unit 5 - Classes
@@ -295,17 +346,32 @@ end.
 ---
 
 (root
-  (unit (kUnit) (moduleName (identifier))
-    (interface (kInterface)
-      (declTypes (kType)
-        (declType (identifier) (kEq)
-          (declClass (kClass)
-            (declProc (kProcedure) (identifier))
-            (declProc (kClass) (kProcedure) (identifier))
+  (unit
+    (kUnit)
+    (moduleName
+      (identifier))
+    (interface
+      (kInterface)
+      (declTypes
+        (kType)
+        (declType
+          (identifier)
+          (kEq)
+          (declClass
+            (kClass)
+            (declProc
+              (kProcedure)
+              (identifier))
+            (declProc
+              (kClass)
+              (kProcedure)
+              (identifier))
             (kEnd)))))
-    (implementation (kImplementation)
+    (implementation
+      (kImplementation)
       (defProc
-        (declProc (kProcedure)
+        (declProc
+          (kProcedure)
           (genericDot
             (identifier)
             (kDot)
@@ -314,7 +380,9 @@ end.
           (kBegin)
           (kEnd)))
       (defProc
-        (declProc (kClass) (kProcedure)
+        (declProc
+          (kClass)
+          (kProcedure)
           (genericDot
             (identifier)
             (kDot)
@@ -324,4 +392,3 @@ end.
           (kEnd))))
     (kEnd)
     (kEndDot)))
-

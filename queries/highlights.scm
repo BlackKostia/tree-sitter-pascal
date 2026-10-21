@@ -137,6 +137,10 @@
 	(kOn)
 	(kCase)
 	(kWith)
+	(kUsing)
+	(kNocopy)
+	(kAsync)
+	(kAwait)
 	(kGoto)
 ] @keyword
 
@@ -176,6 +180,7 @@
 	(kNeq)
 	(kAt)
 	(kHat)
+	(kFatArrow)
 ] @operator
 
 ; technically operators, but better to render as reserved words
@@ -207,8 +212,9 @@
 
 ; -- Literals
 
-(literalNumber)   @number
-(literalString)   @string
+(literalNumber)      @number
+(literalString)      @string
+(interpolatedString) @string
 
 ; -- Comments
 (comment)         @comment

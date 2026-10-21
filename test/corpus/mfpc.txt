@@ -1,0 +1,464 @@
+===
+MFPC Async and Await
+===
+function Compute: IFuture<Integer>; async;
+begin
+  await Task;
+  Result := await Fetch();
+end;
+---
+
+(root
+  (defProc
+    (declProc
+      (kFunction)
+      (identifier)
+      (typeref
+        (typerefTpl
+          (identifier)
+          (kLt)
+          (typerefArgs
+            (identifier))
+          (kGt)))
+      (procAttribute
+        (kAsync)))
+    (block
+      (kBegin)
+      (statement
+        (exprUnary
+          (kAwait)
+          (identifier)))
+      (assignment
+        (identifier)
+        (kAssign)
+        (exprUnary
+          (kAwait)
+          (exprCall
+            (identifier))))
+      (kEnd))))
+
+===
+MFPC Arrow Functions
+===
+procedure TestArrows;
+begin
+  F0 := () => 100;
+  F1 := I => Process(I);
+  F2 := (A, B) => A + B;
+  F3 := (const S: string; MinLen: Integer) => Length(S) >= MinLen;
+  F4 := (A, B: Double): Single => A / B;
+  F5 := (V) => begin Inc(Total, V); end;
+  TParallel.For(0, 9, (I) => Results[I] := Work(I));
+end;
+---
+
+(root
+  (defProc
+    (declProc
+      (kProcedure)
+      (identifier))
+    (block
+      (kBegin)
+      (assignment
+        (identifier)
+        (kAssign)
+        (arrowFunction
+          (kFatArrow)
+          (literalNumber)))
+      (assignment
+        (identifier)
+        (kAssign)
+        (arrowFunction
+          (identifier)
+          (kFatArrow)
+          (exprCall
+            (identifier)
+            (exprArgs
+              (identifier)))))
+      (assignment
+        (identifier)
+        (kAssign)
+        (arrowFunction
+          (identifier)
+          (identifier)
+          (kFatArrow)
+          (exprBinary
+            (identifier)
+            (kAdd)
+            (identifier))))
+      (assignment
+        (identifier)
+        (kAssign)
+        (arrowFunction
+          (declArg
+            (kConst)
+            (identifier)
+            (type
+              (declString
+                (kString))))
+          (declArg
+            (identifier)
+            (type
+              (typeref
+                (identifier))))
+          (kFatArrow)
+          (exprBinary
+            (exprCall
+              (identifier)
+              (exprArgs
+                (identifier)))
+            (kGte)
+            (identifier))))
+      (assignment
+        (identifier)
+        (kAssign)
+        (arrowFunction
+          (identifier)
+          (declArg
+            (identifier)
+            (type
+              (typeref
+                (identifier))))
+          (typeref
+            (identifier))
+          (kFatArrow)
+          (exprBinary
+            (identifier)
+            (kFdiv)
+            (identifier))))
+      (assignment
+        (identifier)
+        (kAssign)
+        (arrowFunction
+          (identifier)
+          (kFatArrow)
+          (block
+            (kBegin)
+            (statement
+              (exprCall
+                (identifier)
+                (exprArgs
+                  (identifier)
+                  (identifier))))
+            (kEnd))))
+      (statement
+        (exprCall
+          (exprDot
+            (identifier)
+            (kDot)
+            (identifier))
+          (exprArgs
+            (literalNumber)
+            (literalNumber)
+            (arrowFunction
+              (identifier)
+              (kFatArrow)
+              (assignment
+                (exprSubscript
+                  (identifier)
+                  (exprArgs
+                    (identifier)))
+                (kAssign)
+                (exprCall
+                  (identifier)
+                  (exprArgs
+                    (identifier))))))))
+      (kEnd))))
+
+===
+MFPC Tuples
+===
+function DivRem(A, B: Integer): (Integer, Integer);
+begin
+  Result := (A div B, A mod B);
+end;
+
+procedure TestTuples;
+type
+  TPos = (Integer, string);
+  TNamed = (Count: Integer, Sum: Int64);
+begin
+  (Q, R) := DivRem(10, 3);
+  var (C, S) := CountAndSum(10);
+  (var Greeting, var Answer) := ('Hello', 42);
+end;
+---
+
+(root
+  (defProc
+    (declProc
+      (kFunction)
+      (identifier)
+      (declArgs
+        (declArg
+          (identifier)
+          (identifier)
+          (type
+            (typeref
+              (identifier)))))
+      (typeref
+        (declTuple
+          (type
+            (typeref
+              (identifier)))
+          (type
+            (typeref
+              (identifier))))))
+    (block
+      (kBegin)
+      (assignment
+        (identifier)
+        (kAssign)
+        (exprTuple
+          (exprBinary
+            (identifier)
+            (kDiv)
+            (identifier))
+          (exprBinary
+            (identifier)
+            (kMod)
+            (identifier))))
+      (kEnd)))
+  (defProc
+    (declProc
+      (kProcedure)
+      (identifier))
+    (declTypes
+      (kType)
+      (declType
+        (identifier)
+        (kEq)
+        (type
+          (declEnum
+            (declEnumValue
+              (identifier))
+            (declEnumValue
+              (identifier)))))
+      (declType
+        (identifier)
+        (kEq)
+        (type
+          (typeref
+            (declTuple
+              (identifier)
+              (type
+                (typeref
+                  (identifier)))
+              (identifier)
+              (type
+                (typeref
+                  (identifier))))))))
+    (block
+      (kBegin)
+      (assignment
+        (tupleDeconstruction
+          (identifier)
+          (identifier))
+        (kAssign)
+        (exprCall
+          (identifier)
+          (exprArgs
+            (literalNumber)
+            (literalNumber))))
+      (assignment
+        (tupleDeconstruction
+          (kVar)
+          (identifier)
+          (identifier))
+        (kAssign)
+        (exprCall
+          (identifier)
+          (exprArgs
+            (literalNumber))))
+      (assignment
+        (tupleDeconstruction
+          (kVar)
+          (identifier)
+          (kVar)
+          (identifier))
+        (kAssign)
+        (exprTuple
+          (literalString)
+          (literalNumber)))
+      (kEnd))))
+
+===
+MFPC Using Statement
+===
+procedure TestUsing;
+begin
+  using var R := TRes.Create do
+  begin
+    DoWork(R);
+  end;
+
+  using var A := TRes.Create, var B := TRes.Create do
+    DoWork(A, B);
+end;
+---
+
+(root
+  (defProc
+    (declProc
+      (kProcedure)
+      (identifier))
+    (block
+      (kBegin)
+      (using
+        (kUsing)
+        (assignment
+          (varAssignDef
+            (kVar)
+            (identifier))
+          (kAssign)
+          (exprDot
+            (identifier)
+            (kDot)
+            (identifier)))
+        (kDo)
+        (block
+          (kBegin)
+          (statement
+            (exprCall
+              (identifier)
+              (exprArgs
+                (identifier))))
+          (kEnd)))
+      (using
+        (kUsing)
+        (assignment
+          (varAssignDef
+            (kVar)
+            (identifier))
+          (kAssign)
+          (exprDot
+            (identifier)
+            (kDot)
+            (identifier)))
+        (assignment
+          (varAssignDef
+            (kVar)
+            (identifier))
+          (kAssign)
+          (exprDot
+            (identifier)
+            (kDot)
+            (identifier)))
+        (kDo)
+        (statement
+          (exprCall
+            (identifier)
+            (exprArgs
+              (identifier)
+              (identifier)))))
+      (kEnd))))
+
+===
+MFPC Inline Variables and For In
+===
+procedure TestInline;
+begin
+  var X, Y: Integer;
+  for var Item in List do
+    Process(Item);
+end;
+---
+
+(root
+  (defProc
+    (declProc
+      (kProcedure)
+      (identifier))
+    (block
+      (kBegin)
+      (varDef
+        (kVar)
+        (identifier)
+        (identifier)
+        (typeref
+          (identifier)))
+      (foreach
+        (kFor)
+        (kVar)
+        (identifier)
+        (kIn)
+        (identifier)
+        (kDo)
+        (statement
+          (exprCall
+            (identifier)
+            (exprArgs
+              (identifier)))))
+      (kEnd))))
+
+===
+MFPC String Interpolation
+===
+procedure TestInterpolation;
+begin
+  S := $'Hello, {Name}!';
+  Formatted := $'Value: {Val:8:2}';
+  Multi := $`line 1 {Id}
+line 2`;
+end;
+---
+
+(root
+  (defProc
+    (declProc
+      (kProcedure)
+      (identifier))
+    (block
+      (kBegin)
+      (assignment
+        (identifier)
+        (kAssign)
+        (interpolatedString
+          (interpolation
+            (interpOpen)
+            (identifier)
+            (interpClose))))
+      (assignment
+        (identifier)
+        (kAssign)
+        (interpolatedString
+          (interpolation
+            (interpOpen)
+            (identifier)
+            (literalNumber)
+            (literalNumber)
+            (interpClose))))
+      (assignment
+        (identifier)
+        (kAssign)
+        (interpolatedString
+          (interpolation
+            (interpOpen)
+            (identifier)
+            (interpClose))))
+      (kEnd))))
+
+===
+MFPC Record Nocopy
+===
+type
+  TLock = record
+    FVal: Integer;
+  end nocopy;
+---
+
+(root
+  (declTypes
+    (kType)
+    (declType
+      (identifier)
+      (kEq)
+      (declClass
+        (kRecord)
+        (declField
+          (identifier)
+          (type
+            (typeref
+              (identifier))))
+        (kEnd)
+        (kNocopy)))))

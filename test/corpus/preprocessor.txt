@@ -13,10 +13,19 @@ var
 (root
   (comment)
   (comment)
-  (declVars (kVar)
-    (declVar (identifier) (type (typeref (identifier))))
+  (declVars
+    (kVar)
+    (declVar
+      (identifier)
+      (type
+        (typeref
+          (identifier))))
     (comment)
-    (declVar (identifier) (type (typeref (identifier))))))
+    (declVar
+      (identifier)
+      (type
+        (typeref
+          (identifier))))))
 
 ===
 Block Comments 1
@@ -38,17 +47,26 @@ var
 
 (root
   (comment)
-  (declVars (kVar)
-    (declVar (identifier)
+  (declVars
+    (kVar)
+    (declVar
+      (identifier)
       (comment)
-      (type (typeref (identifier))))
+      (type
+        (typeref
+          (identifier))))
     (comment)
-    (declVar (identifier)
-      (type (typeref (identifier))))
+    (declVar
+      (identifier)
+      (type
+        (typeref
+          (identifier))))
     (comment)
-    (declVar (identifier)
-      (type (typeref (identifier))))))
-
+    (declVar
+      (identifier)
+      (type
+        (typeref
+          (identifier))))))
 
 ===
 Block Comments 2
@@ -74,26 +92,46 @@ var
 
 ---
 
-(root (comment)
-  (declVars (kVar)
-    (declVar (identifier)
+(root
+  (comment)
+  (declVars
+    (kVar)
+    (declVar
+      (identifier)
       (comment)
-      (type (typeref (identifier))))
+      (type
+        (typeref
+          (identifier))))
     (comment)
-    (declVar (identifier)
-      (type (typeref (identifier))))
+    (declVar
+      (identifier)
+      (type
+        (typeref
+          (identifier))))
     (comment)
-    (declVar (identifier)
-      (type (typeref (identifier))))
+    (declVar
+      (identifier)
+      (type
+        (typeref
+          (identifier))))
     (comment)
-    (declVar (identifier)
-      (type (typeref (identifier))))
+    (declVar
+      (identifier)
+      (type
+        (typeref
+          (identifier))))
     (comment)
-    (declVar (identifier)
-      (type (typeref (identifier))))
+    (declVar
+      (identifier)
+      (type
+        (typeref
+          (identifier))))
     (comment)
-    (declVar (identifier)
-      (type (typeref (identifier)))))
+    (declVar
+      (identifier)
+      (type
+        (typeref
+          (identifier)))))
   (comment))
 
 ===
@@ -110,12 +148,12 @@ Preprocessor directives 1
 ---
 
 (root
-   (pp)
-   (pp)
-   (pp)
-   (pp)
-   (pp)
-   (pp))
+  (pp)
+  (pp)
+  (pp)
+  (pp)
+  (pp)
+  (pp))
 
 ===
 Preprocessor directives 2
@@ -129,13 +167,21 @@ end;
 
 (root
   (defProc
-    (declProc (kProcedure) (identifier)
+    (declProc
+      (kProcedure)
+      (identifier)
       (declArgs
-        (declArg (identifier)
-          (type (typeref (identifier))))
+        (declArg
+          (identifier)
+          (type
+            (typeref
+              (identifier))))
         (pp)
-        (declArg (identifier)
-          (type (typeref (identifier))))
+        (declArg
+          (identifier)
+          (type
+            (typeref
+              (identifier))))
         (pp)))
     (block
       (kBegin)
@@ -153,14 +199,19 @@ end;
 
 (root
   (defProc
-    (declProc (kProcedure) (identifier)
+    (declProc
+      (kProcedure)
+      (identifier)
       (declArgs
-        (declArg (identifier)
+        (declArg
+          (identifier)
           (type
             (pp)
-            (typeref (identifier))
+            (typeref
+              (identifier))
             (pp)
-            (typeref (identifier))
+            (typeref
+              (identifier))
             (pp)))))
     (block
       (kBegin)
@@ -187,17 +238,37 @@ end;
 
 (root
   (defProc
-    (declProc (kProcedure) (identifier))
+    (declProc
+      (kProcedure)
+      (identifier))
     (block
       (kBegin)
       (pp)
-      (if (kIf) (kTrue) (kThen)
-        (statement (exprCall (identifier) (exprArgs (literalString)))))
+      (if
+        (kIf)
+        (kTrue)
+        (kThen)
+        (statement
+          (exprCall
+            (identifier)
+            (exprArgs
+              (literalString)))))
       (pp)
-      (while (kWhile) (kTrue) (kDo)
-        (statement (exprCall (identifier) (exprArgs (literalString)))))
+      (while
+        (kWhile)
+        (kTrue)
+        (kDo)
+        (statement
+          (exprCall
+            (identifier)
+            (exprArgs
+              (literalString)))))
       (pp)
-      (statement (exprCall (identifier) (exprArgs (literalString))))
+      (statement
+        (exprCall
+          (identifier)
+          (exprArgs
+            (literalString))))
       (pp)
       (kEnd))))
 
@@ -218,7 +289,9 @@ end;
 
 (root
   (defProc
-    (declProc (kProcedure) (identifier))
+    (declProc
+      (kProcedure)
+      (identifier))
     (pp)
     (block
       (kBegin)
@@ -242,22 +315,28 @@ type
 ---
 
 (root
-  (declVars (kVar)
-    (declVar (identifier)
+  (declVars
+    (kVar)
+    (declVar
+      (identifier)
       (type
         (pp)
-        (typeref (identifier))
+        (typeref
+          (identifier))
         (pp)
-        (typeref (identifier))
+        (typeref
+          (identifier))
         (pp))))
-  (declTypes (kType)
+  (declTypes
+    (kType)
     (declType
       (identifier)
       (kEq)
       (type
         (pp)
-        (typeref (identifier))
+        (typeref
+          (identifier))
         (pp)
-        (typeref (identifier))
+        (typeref
+          (identifier))
         (pp)))))
-

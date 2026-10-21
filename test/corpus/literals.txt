@@ -11,12 +11,28 @@ const
 ---
 
 (root
-  (declConsts (kConst)
-    (declConst (identifier) (defaultValue (kEq) (literalNumber)))
-    (declConst (identifier) (defaultValue (kEq) (literalNumber)))
-    (declConst (identifier) (defaultValue (kEq) (literalNumber)))
-    (declConst (identifier) (defaultValue (kEq) (literalNumber)))))
-
+  (declConsts
+    (kConst)
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
+        (literalNumber)))
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
+        (literalNumber)))
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
+        (literalNumber)))
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
+        (literalNumber)))))
 
 ===
 Floating point numbers
@@ -34,32 +50,43 @@ const
 ---
 
 (root
-  (declConsts (kConst)
-    (declConst (identifier)
-      (defaultValue (kEq) (literalNumber)))
-    (declConst (identifier)
-      (defaultValue (kEq) (literalNumber)))
-    (declConst (identifier)
-      (defaultValue (kEq) (literalNumber)))
-    (declConst (identifier)
-      (defaultValue (kEq) (literalNumber)))
-    (declConst (identifier)
-      (defaultValue (kEq) (literalNumber)))
-    (declConst (identifier)
-      (defaultValue (kEq) (literalNumber)))
-    (declConst (identifier)
-      (defaultValue (kEq) (literalNumber)))))
-
-===
-Strings
-===
-
-const
-  a = 'Hello World';
-  b = #123;
-  c = #13#10;
-  d = 'Hello'#13#10'World';
-  e = 'Hello'#$0c#$0a'World'#13#10;
+  (declConsts
+    (kConst)
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
+        (literalNumber)))
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
+        (literalNumber)))
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
+        (literalNumber)))
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
+        (literalNumber)))
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
+        (literalNumber)))
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
+        (literalNumber)))
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
+        (literalNumber)))))
 
 ===
 Array initializer
@@ -77,24 +104,42 @@ const
 ---
 
 (root
-  (declConsts (kConst)
-    (declConst (identifier)
-      (type (declArray (kArray) (kOf) (type (typeref (identifier)))))
-      (defaultValue (kEq)
+  (declConsts
+    (kConst)
+    (declConst
+      (identifier)
+      (type
+        (declArray
+          (kArray)
+          (kOf)
+          (type
+            (typeref
+              (identifier)))))
+      (defaultValue
+        (kEq)
         (arrInitializer
           (literalNumber)
           (literalNumber)
           (literalNumber)
           (literalNumber)
           (literalNumber))))
-    (declConst (identifier)
+    (declConst
+      (identifier)
       (type
-        (declArray (kArray)
-          (range (literalNumber) (literalNumber))
-          (range (literalNumber) (literalNumber))
+        (declArray
+          (kArray)
+          (range
+            (literalNumber)
+            (literalNumber))
+          (range
+            (literalNumber)
+            (literalNumber))
           (kOf)
-          (type (typeref (identifier)))))
-      (defaultValue (kEq)
+          (type
+            (typeref
+              (identifier)))))
+      (defaultValue
+        (kEq)
         (arrInitializer
           (arrInitializer
             (literalNumber)
@@ -109,7 +154,6 @@ const
             (literalNumber)
             (literalNumber)))))))
 
-
 ===
 Record initializer
 ===
@@ -120,17 +164,33 @@ const
 ---
 
 (root
-  (declConsts (kConst)
-    (declConst (identifier) (type (typeref (identifier)))
-      (defaultValue (kEq)
+  (declConsts
+    (kConst)
+    (declConst
+      (identifier)
+      (type
+        (typeref
+          (identifier)))
+      (defaultValue
+        (kEq)
         (recInitializer
-          (recInitializerField (identifier) (literalNumber))
-          (recInitializerField (identifier) (literalNumber))
-          (recInitializerField (identifier)
+          (recInitializerField
+            (identifier)
+            (literalNumber))
+          (recInitializerField
+            (identifier)
+            (literalNumber))
+          (recInitializerField
+            (identifier)
             (recInitializer
-              (recInitializerField (identifier) (literalNumber))
-              (recInitializerField (identifier) (literalNumber))))
-          (recInitializerField (literalNumber)))))))
+              (recInitializerField
+                (identifier)
+                (literalNumber))
+              (recInitializerField
+                (identifier)
+                (literalNumber))))
+          (recInitializerField
+            (literalNumber)))))))
 
 ===
 Sets
@@ -142,13 +202,22 @@ const
 ---
 
 (root
-  (declConsts (kConst)
-    (declConst (identifier)
-      (defaultValue (kEq)
+  (declConsts
+    (kConst)
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
         (exprBrackets
-          (range (literalNumber) (literalNumber))
-          (range (literalString) (literalString))
-          (range (literalString) (literalString)))))))
+          (range
+            (literalNumber)
+            (literalNumber))
+          (range
+            (literalString)
+            (literalString))
+          (range
+            (literalString)
+            (literalString)))))))
 
 ===
 Constant expression
@@ -161,15 +230,20 @@ const
 ---
 
 (root
-  (declConsts (kConst)
-    (declConst (identifier)
-      (defaultValue (kEq)
+  (declConsts
+    (kConst)
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
         (exprBinary
           (literalNumber)
           (kAdd)
           (literalNumber))))
-    (declConst (identifier)
-      (defaultValue (kEq)
+    (declConst
+      (identifier)
+      (defaultValue
+        (kEq)
         (exprBinary
           (literalNumber)
           (kAdd)
